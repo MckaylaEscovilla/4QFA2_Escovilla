@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num1">[Enter a number between 2 and 10]</label> <br/> 
+    <input type="text" id="num1">
+    <label for="num2">by</label>
+    <input type="text" id="num2"> <br/> <br/>
+
+    <input type="button" value="Click here when ready!" onclick="outPut()"> <br/> <br/>
+
+    <div id="table"></div>
+
+    <script>
+        function outPut(){
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            if(num1 < 2 || num1 > 10 || num2 < 2 || num2 > 10){
+                alert("Please enter numbers between 2 and 10");
+            }
+            else{
+                var w, l;
+                var table = "<table border = 1>";
+                
+                for(w = 1; w <= num1; w++){
+                    table += "<tr>";
+                        for(l = 1; l <= num2; l++){
+                            table += "<td>" + (w * l) + "</td>";
+                        }
+                        table += "</tr>";
+                }
+                document.getElementById("table").innerHTML = table;
+            }
+        }
+    </script>
+</body>
+</html>
